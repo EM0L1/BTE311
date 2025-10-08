@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Yeni Site | Başlık</title>
+    <meta name="description" content="Kısa bir site açıklaması." />
+
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta name="theme-color" content="#0ea5e9" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="logo" aria-label="Ana sayfa">YourLogo</a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="sr-only">Menüyü aç/kapat</span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Birincil">
+          <ul>
+            <li><a href="#">Ana Sayfa</a></li>
+            <li><a href="#hakkinda">Hakkında</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="site-main">
+      <section class="hero">
+        <div class="container">
+          <h1>Yeni Web Sitenize Hoş Geldiniz</h1>
+          <p>Bu bölüm, ürün veya projenizin kısa özetini içerir.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#basla">Hemen Başla</a>
+            <a class="btn btn--ghost" href="#detaylar">Daha Fazla Bilgi</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="detaylar" class="section">
+        <div class="container grid">
+          <article class="card">
+            <h2>Özellik 1</h2>
+            <p>Kısa açıklama metni. Bu alanı içerik ile doldurun.</p>
+          </article>
+          <article class="card">
+            <h2>Özellik 2</h2>
+            <p>Kısa açıklama metni. Bu alanı içerik ile doldurun.</p>
+          </article>
+          <article class="card">
+            <h2>Özellik 3</h2>
+            <p>Kısa açıklama metni. Bu alanı içerik ile doldurun.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Yeni Site. Tüm hakları saklıdır.</p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
+

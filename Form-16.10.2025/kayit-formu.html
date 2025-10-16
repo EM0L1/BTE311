@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Kayıt Formu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>WebSite</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Ana Sayfa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Kullanıcı Kayıt Formu</h1>
+            
+            <form action="kayit-isle.php" method="get">
+                <fieldset>
+                    <legend>Kişisel Bilgiler</legend>
+                    
+                    <label for="ad">Ad:</label>
+                    <input type="text" id="ad" name="ad" required>
+                    
+                    <label for="soyad">Soyad:</label>
+                    <input type="text" id="soyad" name="soyad" required>
+                    
+                    <label for="sifre">Şifre:</label>
+                    <input type="password" id="sifre" name="sifre" required minlength="6">
+                    
+                    <label for="email">E-posta:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="yas">Yaş:</label>
+                    <input type="number" id="yas" name="yas" min="18" max="100" required>
+                    
+                    <label for="telefon">Telefon:</label>
+                    <input type="tel" id="telefon" name="telefon" pattern="[0-9]{10}" required>
+                    
+                    <label for="website">Kişisel Web Sitesi:</label>
+                    <input type="url" id="website" name="website" placeholder="https://example.com">
+                    
+                    <label for="dogum-tarihi">Doğum Tarihi:</label>
+                    <input type="date" id="dogum-tarihi" name="dogum-tarihi" required>
+                    
+                    <label for="iletisim-saati">Tercih Edilen İletişim Saati:</label>
+                    <input type="time" id="iletisim-saati" name="iletisim-saati">
+                    
+                    <label for="favori-renk">Favori Renk:</label>
+                    <input type="color" id="favori-renk" name="favori-renk" value="#000000">
+                    
+                    <label for="deneyim">Deneyim Seviyesi:</label>
+                    <input type="range" id="deneyim" name="deneyim" min="1" max="10" value="5">
+                    <span id="deneyim-deger">5</span>
+                    
+                    <label for="kullanici-adi">Kullanıcı Adı:</label>
+                    <input type="search" id="kullanici-adi" name="kullanici-adi" required>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Ek Bilgiler</legend>
+                    
+                    <label for="sehir">Şehir:</label>
+                    <select id="sehir" name="sehir" required>
+                        <option value="">Şehir seçiniz</option>
+                        <option value="ankara">Ankara</option>
+                        <option value="istanbul">İstanbul</option>
+                        <option value="izmir">İzmir</option>
+                        <option value="diger">Diğer</option>
+                    </select>
+                    
+                    <label>Cinsiyet:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="erkek" name="cinsiyet" value="erkek" required>
+                        <label for="erkek">Erkek</label>
+                        <input type="radio" id="kadin" name="cinsiyet" value="kadin">
+                        <label for="kadin">Kadın</label>
+                        <input type="radio" id="belirtmek-istemiyorum" name="cinsiyet" value="belirtmek-istemiyorum">
+                        <label for="belirtmek-istemiyorum">Belirtmek İstemiyorum</label>
+                    </div>
+                    
+                    <label>İlgi Alanları:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="teknoloji" name="ilgi-alanlari" value="teknoloji">
+                        <label for="teknoloji">Teknoloji</label>
+                        <input type="checkbox" id="spor" name="ilgi-alanlari" value="spor">
+                        <label for="spor">Spor</label>
+                        <input type="checkbox" id="muzik" name="ilgi-alanlari" value="muzik">
+                        <label for="muzik">Müzik</label>
+                        <input type="checkbox" id="sanat" name="ilgi-alanlari" value="sanat">
+                        <label for="sanat">Sanat</label>
+                        <input type="checkbox" id="kitap" name="ilgi-alanlari" value="kitap">
+                        <label for="kitap">Kitap</label>
+                    </div>
+                    
+                    <label for="profil-foto">Profil Fotoğrafı:</label>
+                    <input type="file" id="profil-foto" name="profil-foto" accept="image/*">
+                    
+                    <label for="hakkinda">Hakkında:</label>
+                    <textarea id="hakkinda" name="hakkinda" rows="4" cols="50" placeholder="Kendiniz hakkında kısa bir açıklama yazın..."></textarea>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="sozlesme" name="sozlesme" required>
+                        <label for="sozlesme">Kullanım şartlarını ve gizlilik politikasını kabul ediyorum.</label>
+                    </div>
+                </fieldset>
+                
+                <input type="submit" value="Kayıt Ol">
+                <input type="reset" value="Formu Sıfırla">
+            </form>
+            
+            <script>
+                document.getElementById('deneyim').addEventListener('input', function() {
+                    document.getElementById('deneyim-deger').textContent = this.value;
+                });
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hakkımızda</h3>
+                <p>Web tabanlı programlama dersi kapsamında oluşturulan kullanıcı kayıt formu projesi.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hızlı Linkler</h3>
+                <ul>
+                    <li><a href="#home">Ana Sayfa</a></li>
+                    <li><a href="#about">Hakkında</a></li>
+                    <li><a href="#contact">İletişim</a></li>
+                    <li><a href="#privacy">Gizlilik Politikası</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>📧 info@website.com</p>
+                <p>📞 +90 (555) 123 45 67</p>
+                <p>📍 Ankara, Türkiye</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Emincan Doğan. Tüm hakları saklıdır. | BTE311 Web Tabanlı Programlama</p>
+        </div>
+    </footer>
+</body>
+</html>

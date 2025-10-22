@@ -64,50 +64,86 @@
         .tablo2 tr:hover td {
             background-color: #d0e8f7;
         }
+
+        /* Görev 2: Üst üste binen 3 daire */
+        .task2 {
+            margin-top: 36px;
+        }
+
+        .task2 h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+            background: #e8ffe8;
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+
+        .circles {
+            position: relative;
+            width: 360px;
+            height: 240px;
+            margin: 12px auto 0 auto;
+            background: #fff;
+        }
+
+        .circle {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            mix-blend-mode: multiply;
+            opacity: 0.85;
+        }
+
+        .circle.orange { background: rgba(242, 127, 95, 0.8); left: 60px; top: 20px; }
+        .circle.blue   { background: rgba(122, 127, 255, 0.8); left: 160px; top: 20px; }
+        .circle.yellow { background: rgba(255, 236, 90, 0.8); left: 110px; top: 90px; }
     </style>
 </head>
 <body>
 
     <h1>Üç Farklı CSS Uygulama Yöntemi</h1>
 
-    <!-- 1. TABLO: HARİCİ CSS -->
-    <h2>1. Tablo - Harici CSS Kullanımı (External CSS - &lt;link&gt;)</h2>
+    <!-- 1. TABLO: SATIR İÇİ CSS -->
+    <h2>1. Tablo - Satır İçi CSS Kullanımı (Inline CSS - style="")</h2>
     <p style="text-align: center; color: #666; margin-bottom: 10px;">
-        Bu tablo <strong>style.css</strong> dosyasından stillendiriliyor
+        Bu tablonun her elementi <strong>style=""</strong> attribute'u ile ayrı ayrı stillendiriliyor
     </p>
-    <table class="tablo1">
+    <table style="width: 70%; border-collapse: collapse; margin: 20px auto; font-family: Arial, sans-serif; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         <thead>
             <tr>
-                <th>Öğrenci No</th>
-                <th>Ad Soyad</th>
-                <th>Bölüm</th>
-                <th>Not Ortalaması</th>
+                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Öğrenci No</th>
+                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Ad Soyad</th>
+                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Bölüm</th>
+                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Not Ortalaması</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>2021001</td>
-                <td>Ahmet Yılmaz</td>
-                <td>Bilgisayar Mühendisliği</td>
-                <td>3.45</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">2021001</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Ahmet Yılmaz</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Bilgisayar Mühendisliği</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">3.45</td>
             </tr>
             <tr>
-                <td>2021002</td>
-                <td>Ayşe Demir</td>
-                <td>Yazılım Mühendisliği</td>
-                <td>3.78</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">2021002</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Ayşe Demir</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Yazılım Mühendisliği</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">3.78</td>
             </tr>
             <tr>
-                <td>2021003</td>
-                <td>Mehmet Kaya</td>
-                <td>Bilgisayar Mühendisliği</td>
-                <td>3.62</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">2021003</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Mehmet Kaya</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Bilgisayar Mühendisliği</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">3.62</td>
             </tr>
             <tr>
-                <td>2021004</td>
-                <td>Fatma Şahin</td>
-                <td>Yazılım Mühendisliği</td>
-                <td>3.91</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">2021004</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Fatma Şahin</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Yazılım Mühendisliği</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">3.91</td>
             </tr>
         </tbody>
     </table>
@@ -158,47 +194,59 @@
 
     <hr>
 
-    <!-- 3. TABLO: SATIR İÇİ CSS -->
-    <h2>3. Tablo - Satır İçi CSS Kullanımı (Inline CSS - style="")</h2>
+    <!-- 3. TABLO: HARİCİ CSS -->
+    <h2>3. Tablo - Harici CSS Kullanımı (External CSS - &lt;link&gt;)</h2>
     <p style="text-align: center; color: #666; margin-bottom: 10px;">
-        Bu tablonun her elementi <strong>style=""</strong> attribute'u ile ayrı ayrı stillendiriliyor
+        Bu tablo <strong>style.css</strong> dosyasından stillendiriliyor
     </p>
-    <table style="width: 70%; border-collapse: collapse; margin: 20px auto; font-family: Arial, sans-serif; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <table class="tablo1">
         <thead>
             <tr>
-                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Öğrenci No</th>
-                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Ad Soyad</th>
-                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Bölüm</th>
-                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Not Ortalaması</th>
+                <th>Öğrenci No</th>
+                <th>Ad Soyad</th>
+                <th>Bölüm</th>
+                <th>Not Ortalaması</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">2021001</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Ahmet Yılmaz</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Bilgisayar Mühendisliği</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">3.45</td>
+                <td>2021001</td>
+                <td>Ahmet Yılmaz</td>
+                <td>Bilgisayar Mühendisliği</td>
+                <td>3.45</td>
             </tr>
             <tr>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">2021002</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Ayşe Demir</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Yazılım Mühendisliği</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">3.78</td>
+                <td>2021002</td>
+                <td>Ayşe Demir</td>
+                <td>Yazılım Mühendisliği</td>
+                <td>3.78</td>
             </tr>
             <tr>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">2021003</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Mehmet Kaya</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Bilgisayar Mühendisliği</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">3.62</td>
+                <td>2021003</td>
+                <td>Mehmet Kaya</td>
+                <td>Bilgisayar Mühendisliği</td>
+                <td>3.62</td>
             </tr>
             <tr>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">2021004</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Fatma Şahin</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Yazılım Mühendisliği</td>
-                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">3.91</td>
+                <td>2021004</td>
+                <td>Fatma Şahin</td>
+                <td>Yazılım Mühendisliği</td>
+                <td>3.91</td>
             </tr>
         </tbody>
     </table>
+
+    <hr>
+
+    <!-- Görev 2: Üst üste binen 3 daire -->
+    <div class="task2">
+        <h2>Görev 2: 3 adet &lt;div&gt; ile daireleri oluştur</h2>
+        <div class="circles">
+            <div class="circle orange"></div>
+            <div class="circle blue"></div>
+            <div class="circle yellow"></div>
+        </div>
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,32 @@
+/* Harici CSS Dosyası - 1. Tablo için */
+.tablo1 {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tablo1 th {
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border: 2px solid #357abd;
+}
+
+.tablo1 td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.tablo1 tr:nth-child(even) td {
+    background-color: #e8f4f8;
+}
+
+.tablo1 tr:hover td {
+    background-color: #d0e8f7;
+}
+
+

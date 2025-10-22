@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üç Farklı CSS Uygulamalı Tablo</title>
+
+    <!-- Harici CSS dosyası -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Sayfa İçi CSS (Internal CSS) -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #4a90e2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ddd;
+            margin: 40px 0;
+        }
+
+        /* 2. Tablo için Internal CSS */
+        .tablo2 {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tablo2 th {
+            background-color: #4a90e2;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            border: 2px solid #357abd;
+        }
+
+        .tablo2 td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        .tablo2 tr:nth-child(even) td {
+            background-color: #e8f4f8;
+        }
+
+        .tablo2 tr:hover td {
+            background-color: #d0e8f7;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Üç Farklı CSS Uygulama Yöntemi</h1>
+
+    <!-- 1. TABLO: HARİCİ CSS -->
+    <h2>1. Tablo - Harici CSS Kullanımı (External CSS - &lt;link&gt;)</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 10px;">
+        Bu tablo <strong>style.css</strong> dosyasından stillendiriliyor
+    </p>
+    <table class="tablo1">
+        <thead>
+            <tr>
+                <th>Öğrenci No</th>
+                <th>Ad Soyad</th>
+                <th>Bölüm</th>
+                <th>Not Ortalaması</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2021001</td>
+                <td>Ahmet Yılmaz</td>
+                <td>Bilgisayar Mühendisliği</td>
+                <td>3.45</td>
+            </tr>
+            <tr>
+                <td>2021002</td>
+                <td>Ayşe Demir</td>
+                <td>Yazılım Mühendisliği</td>
+                <td>3.78</td>
+            </tr>
+            <tr>
+                <td>2021003</td>
+                <td>Mehmet Kaya</td>
+                <td>Bilgisayar Mühendisliği</td>
+                <td>3.62</td>
+            </tr>
+            <tr>
+                <td>2021004</td>
+                <td>Fatma Şahin</td>
+                <td>Yazılım Mühendisliği</td>
+                <td>3.91</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <!-- 2. TABLO: SAYFA İÇİ CSS -->
+    <h2>2. Tablo - Sayfa İçi CSS Kullanımı (Internal CSS - &lt;style&gt;)</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 10px;">
+        Bu tablo HTML'in <strong>&lt;head&gt;</strong> bölümündeki <strong>&lt;style&gt;</strong> etiketinden stillendiriliyor
+    </p>
+    <table class="tablo2">
+        <thead>
+            <tr>
+                <th>Öğrenci No</th>
+                <th>Ad Soyad</th>
+                <th>Bölüm</th>
+                <th>Not Ortalaması</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2021001</td>
+                <td>Ahmet Yılmaz</td>
+                <td>Bilgisayar Mühendisliği</td>
+                <td>3.45</td>
+            </tr>
+            <tr>
+                <td>2021002</td>
+                <td>Ayşe Demir</td>
+                <td>Yazılım Mühendisliği</td>
+                <td>3.78</td>
+            </tr>
+            <tr>
+                <td>2021003</td>
+                <td>Mehmet Kaya</td>
+                <td>Bilgisayar Mühendisliği</td>
+                <td>3.62</td>
+            </tr>
+            <tr>
+                <td>2021004</td>
+                <td>Fatma Şahin</td>
+                <td>Yazılım Mühendisliği</td>
+                <td>3.91</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <!-- 3. TABLO: SATIR İÇİ CSS -->
+    <h2>3. Tablo - Satır İçi CSS Kullanımı (Inline CSS - style="")</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 10px;">
+        Bu tablonun her elementi <strong>style=""</strong> attribute'u ile ayrı ayrı stillendiriliyor
+    </p>
+    <table style="width: 70%; border-collapse: collapse; margin: 20px auto; font-family: Arial, sans-serif; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <thead>
+            <tr>
+                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Öğrenci No</th>
+                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Ad Soyad</th>
+                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Bölüm</th>
+                <th style="background-color: #4a90e2; color: white; padding: 12px; text-align: left; border: 2px solid #357abd;">Not Ortalaması</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">2021001</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Ahmet Yılmaz</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Bilgisayar Mühendisliği</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">3.45</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">2021002</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Ayşe Demir</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Yazılım Mühendisliği</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">3.78</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">2021003</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Mehmet Kaya</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">Bilgisayar Mühendisliği</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9;">3.62</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">2021004</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Fatma Şahin</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">Yazılım Mühendisliği</td>
+                <td style="padding: 10px; border: 1px solid #ddd; background-color: #e8f4f8;">3.91</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,80 +1,325 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTE311 - Ödevlerim</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <title>Yeni Site | Başlık</title>
-    <meta name="description" content="Kısa bir site açıklaması." />
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" href="styles.css" />
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+        }
 
-    <meta name="theme-color" content="#0ea5e9" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">İçeriğe geç</a>
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
 
-    <header class="site-header">
-      <div class="container header-inner">
-        <a href="#" class="logo" aria-label="Ana sayfa">YourLogo</a>
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
 
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-          <span class="nav-toggle__bar" aria-hidden="true"></span>
-          <span class="nav-toggle__bar" aria-hidden="true"></span>
-          <span class="nav-toggle__bar" aria-hidden="true"></span>
-          <span class="sr-only">Menüyü aç/kapat</span>
-        </button>
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
 
-        <nav id="site-nav" class="site-nav" aria-label="Birincil">
-          <ul>
-            <li><a href="#">Ana Sayfa</a></li>
-            <li><a href="#hakkinda">Hakkında</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+        .info-box h2 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
 
-    <main id="main" class="site-main">
-      <section class="hero">
-        <div class="container">
-          <h1>Yeni Web Sitenize Hoş Geldiniz</h1>
-          <p>Bu bölüm, ürün veya projenizin kısa özetini içerir.</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#basla">Hemen Başla</a>
-            <a class="btn btn--ghost" href="#detaylar">Daha Fazla Bilgi</a>
-          </div>
+        .info-box p {
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        th:first-child {
+            border-top-left-radius: 10px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 10px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+            transform: scale(1.01);
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            padding: 18px;
+            color: #333;
+        }
+
+        .week-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .link-cell a {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .link-cell a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .link-cell a.disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .status.completed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status.pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 12px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 BTE311 Ödevlerim</h1>
+        <p class="subtitle">Tüm haftalık ödevlerime buradan ulaşabilirsiniz</p>
+
+        <div class="info-box">
+            <h2>Hoş Geldiniz!</h2>
+            <p>Bu sayfada BTE311 dersi için hazırladığım tüm ödevleri haftalara göre düzenlenmiş şekilde bulabilirsiniz.</p>
         </div>
-      </section>
 
-      <section id="detaylar" class="section">
-        <div class="container grid">
-          <article class="card">
-            <h2>Özellik 1</h2>
-            <p>Kısa açıklama metni. Bu alanı içerik ile doldurun.</p>
-          </article>
-          <article class="card">
-            <h2>Özellik 2</h2>
-            <p>Kısa açıklama metni. Bu alanı içerik ile doldurun.</p>
-          </article>
-          <article class="card">
-            <h2>Özellik 3</h2>
-            <p>Kısa açıklama metni. Bu alanı içerik ile doldurun.</p>
-          </article>
+        <table>
+            <thead>
+                <tr>
+                    <th>Hafta</th>
+                    <th>Ödev Konusu</th>
+                    <th>Durum</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="week-number">Hafta 1</td>
+                    <td>Kayıt Formu</td>
+                    <td><span class="status completed">Tamamlandı</span></td>
+                    <td class="link-cell">
+                        <a href="Form-16.10.2025/kayit-formu.html" target="_blank">Ödevi Görüntüle</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 2</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 3</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 4</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 5</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 6</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 7</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 8</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 9</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 10</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 11</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 12</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 13</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="week-number">Hafta 14</td>
+                    <td>Ödev Konusu</td>
+                    <td><span class="status pending">Beklemede</span></td>
+                    <td class="link-cell">
+                        <a href="#" class="disabled">Yakında</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <p>© 2025 BTE311 - Tüm ödevler bu sayfadan erişilebilir</p>
         </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> Yeni Site. Tüm hakları saklıdır.</p>
-      </div>
-    </footer>
-
-    <script src="script.js" defer></script>
-  </body>
+    </div>
+</body>
 </html>
-
 

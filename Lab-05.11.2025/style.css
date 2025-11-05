@@ -1,0 +1,124 @@
+:root {
+  --bg: #f6f7fb;
+  --ink: #0f1720;
+  --red-1: rgba(220, 38, 38, 0.18);
+  --red-2: rgba(220, 38, 38, 0.24);
+  --red-3: rgba(220, 38, 38, 0.30);
+  --red-4: rgba(220, 38, 38, 0.36);
+  --red-5: rgba(220, 38, 38, 0.42);
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.bg-anim {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 40px 16px;
+  z-index: 2;
+}
+
+.content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.content h1 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 6vw, 96px);
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.20);
+}
+
+.content p {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(14px, 2.4vw, 24px);
+  opacity: 0.95;
+}
+
+/* Arka plandaki kırmızı kutucuklar */
+.rects {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.bar {
+  /* Temel boyutlar - genişlik tüm ekran; yükseklik şerit kalınlığı */
+  width: 100vw;
+  height: clamp(80px, 16vh, 220px);
+  border-radius: 16px;
+  background: var(--red-3);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scaleX(0.15) scaleY(1);
+  backdrop-filter: blur(0.5px);
+  transform-origin: center;
+}
+
+/* Katman renk/derinlik ve farklı gecikmeler (hepsi aynı merkezde üst üste) */
+.bar:nth-child(1) { background: var(--red-1); animation: stretchX 6.2s ease-in-out infinite; animation-delay: 0s; }
+.bar:nth-child(2) { background: var(--red-2); animation: stretchY 7.0s ease-in-out infinite; animation-delay: 0.25s; }
+.bar:nth-child(3) { background: var(--red-3); animation: stretchX 6.8s ease-in-out infinite reverse; animation-delay: 0.5s; }
+.bar:nth-child(4) { background: var(--red-4); animation: stretchY 7.6s ease-in-out infinite reverse; animation-delay: 0.75s; }
+.bar:nth-child(5) { background: var(--red-5); animation: stretchX 7.4s ease-in-out infinite; animation-delay: 1s; }
+.bar:nth-child(6) { background: var(--red-4); animation: stretchY 6.6s ease-in-out infinite; animation-delay: 1.25s; }
+.bar:nth-child(7) { background: var(--red-2); animation: stretchX 7.8s ease-in-out infinite reverse; animation-delay: 1.5s; }
+
+/* Sağ tarafa genişle, sonra yandan küçülüp tekrar uzayarak döngü yap */
+/* YATAY GENİŞLEME: tüm ekranı kaplayacak şekilde scaleX */
+@keyframes stretchX {
+  0%   { transform: translate(-50%, -50%) scaleX(0.12) scaleY(1); opacity: 0.85; }
+  45%  { transform: translate(-50%, -50%) scaleX(1)    scaleY(0.96); opacity: 1; }
+  60%  { transform: translate(-50%, -50%) scaleX(0.65) scaleY(1.08); opacity: 0.95; }
+  100% { transform: translate(-50%, -50%) scaleX(0.12) scaleY(1); opacity: 0.85; }
+}
+
+/* DİKEY GENİŞLEME: yüksekliği büyütüp tüm ekranı kaplayacak şekilde scaleY */
+@keyframes stretchY {
+  0%   { transform: translate(-50%, -50%) scaleX(0.9)  scaleY(0.25); opacity: 0.85; }
+  50%  { transform: translate(-50%, -50%) scaleX(0.85) scaleY(1.05); opacity: 1; }
+  70%  { transform: translate(-50%, -50%) scaleX(0.75) scaleY(1.6);  opacity: 0.95; }
+  100% { transform: translate(-50%, -50%) scaleX(0.9)  scaleY(0.25); opacity: 0.85; }
+}
+
+/* Açık arka plan üzerine başlık okunabilirliği için degrade */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.0) 0%, rgba(220,38,38,0.10) 55%, rgba(0,0,0,0.25) 100%);
+  z-index: 1;
+}
+
+/* Mobil ince ayarları */
+@media (max-width: 640px) {
+  .bar { --h: 140px; }
+}
+
+

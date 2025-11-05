@@ -1,0 +1,119 @@
+:root {
+  --bg: #0b1020;
+  --card: #161c2f;
+  --ink: #e8ecf7;
+  --muted: #9fb0c8;
+  --accent: #5b8cff;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(1200px 600px at 10% 0%, #121933 0%, #0b1020 60%);
+}
+
+.header {
+  text-align: center;
+  padding: 28px 16px 8px;
+}
+
+.header h1 { margin: 0 0 6px; font-weight: 800; letter-spacing: .4px; }
+.header p { margin: 0; color: var(--muted); }
+
+.stage {
+  max-width: 1200px;
+  margin: 24px auto 32px;
+  padding: 0 16px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.emoji {
+  font-size: 72px;
+  line-height: 1;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+
+.label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--ink);
+  background: rgba(91, 140, 255, 0.1);
+  border: 1px solid rgba(91, 140, 255, 0.25);
+  border-radius: 999px;
+}
+
+/* 1) Yukarı aşağı gidip gelen */
+.updown .emoji { animation: updown 2.2s ease-in-out infinite; }
+@keyframes updown {
+  0%, 100% { transform: translateY(-16px); }
+  50% { transform: translateY(16px); }
+}
+
+/* 2) Büyüyüp küçülen ve rengi değişen (arka plan halkası kullanarak) */
+.scale-color::before {
+  content: "";
+  position: absolute;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  z-index: 0;
+  background: radial-gradient(circle at 30% 30%, #ff80b5, #ff4d4f);
+  animation: pulseColor 2.4s ease-in-out infinite;
+  filter: blur(2px);
+}
+.scale-color .emoji { position: relative; z-index: 1; animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse {
+  0%, 100% { transform: scale(0.9); }
+  50% { transform: scale(1.15); }
+}
+@keyframes pulseColor {
+  0%, 100% { background: radial-gradient(circle at 30% 30%, #ff80b5, #ff4d4f); }
+  50% { background: radial-gradient(circle at 70% 70%, #7cf7ff, #5b8cff); }
+}
+
+/* 3) Transparanlığı artıp azalan */
+.fade .emoji { animation: fade 2s ease-in-out infinite; }
+@keyframes fade {
+  0%, 100% { opacity: .25; }
+  50% { opacity: 1; }
+}
+
+/* 4) Sağa sola giden gelen */
+.leftright .emoji { animation: leftright 2.2s ease-in-out infinite; }
+@keyframes leftright {
+  0%, 100% { transform: translateX(-22px); }
+  50% { transform: translateX(22px); }
+}
+
+/* 5) Dönen */
+.spin .emoji { animation: spin 2.8s linear infinite; }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.footer { text-align: center; color: var(--muted); padding-bottom: 28px; }
+
+

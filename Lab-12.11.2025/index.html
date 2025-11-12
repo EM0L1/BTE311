@@ -4,106 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 12.11.2025 - Video Kartları</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header class="page-header">
-        <h1>🎬 Youtube Benzeri Video Kartları</h1>
-        <p>Rastgele oluşturulmuş 12 kartlık video galerisini inceleyin.</p>
-    </header>
+<body class="bg-dark text-light">
+    <div class="container py-5">
+        <!-- Header -->
+        <header class="text-center mb-5">
+            <h1 class="display-4 fw-bold mb-3">🎬 Youtube Benzeri Video Kartları</h1>
+            <p class="lead text-muted">Rastgele oluşturulmuş 12 kartlık video galerisini inceleyin.</p>
+        </header>
 
-    <main class="grid-wrapper">
-        <section class="video-grid">
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video1/320/180" alt="Video 1">
+        <!-- Video Grid -->
+        <main>
+            <div class="row g-4">
+                <!-- Video Card 1 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video1/320/180" class="card-img-top" alt="Video 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Gizemli Şehir Sokakları</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 3 Kasım 2025</p>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="title">Gizemli Şehir Sokakları</h2>
-                <p class="meta">Yüklenme: 3 Kasım 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video2/320/180" alt="Video 2">
-                </div>
-                <h2 class="title">Rengarenk Dağ Bisikleti Turu</h2>
-                <p class="meta">Yüklenme: 18 Ekim 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video3/320/180" alt="Video 3">
-                </div>
-                <h2 class="title">Gece Gökyüzünde Yıldız Avı</h2>
-                <p class="meta">Yüklenme: 27 Eylül 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video4/320/180" alt="Video 4">
-                </div>
-                <h2 class="title">Deniz Kenarında Sessiz Sabah</h2>
-                <p class="meta">Yüklenme: 9 Kasım 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video5/320/180" alt="Video 5">
-                </div>
-                <h2 class="title">Kahveci Günlüğü: Latte Sanatı</h2>
-                <p class="meta">Yüklenme: 1 Kasım 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video6/320/180" alt="Video 6">
-                </div>
-                <h2 class="title">Orman Yolunda Sessiz Yürüyüş</h2>
-                <p class="meta">Yüklenme: 25 Ekim 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video7/320/180" alt="Video 7">
-                </div>
-                <h2 class="title">Hızlı Çizim: Dijital Portre</h2>
-                <p class="meta">Yüklenme: 7 Kasım 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video8/320/180" alt="Video 8">
-                </div>
-                <h2 class="title">Sokak Müzisyenleri Konseri</h2>
-                <p class="meta">Yüklenme: 16 Eylül 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video9/320/180" alt="Video 9">
-                </div>
-                <h2 class="title">Yaratıcı Kahvaltı Tarifleri</h2>
-                <p class="meta">Yüklenme: 30 Ekim 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video10/320/180" alt="Video 10">
-                </div>
-                <h2 class="title">Bilim Seansı: Mini Roketler</h2>
-                <p class="meta">Yüklenme: 12 Ağustos 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video11/320/180" alt="Video 11">
-                </div>
-                <h2 class="title">Şehrin Gizli Kütüphaneleri</h2>
-                <p class="meta">Yüklenme: 4 Kasım 2025</p>
-            </article>
-            <article class="video-card">
-                <div class="thumbnail">
-                    <img src="https://picsum.photos/seed/video12/320/180" alt="Video 12">
-                </div>
-                <h2 class="title">Drone ile Gün Batımı</h2>
-                <p class="meta">Yüklenme: 2 Kasım 2025</p>
-            </article>
-        </section>
-    </main>
 
-    <footer class="page-footer">
-        <p>© 2025 Lab 12.11.2025 - Youtube tarzı kart düzeni çalışması</p>
-    </footer>
+                <!-- Video Card 2 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video2/320/180" class="card-img-top" alt="Video 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Rengarenk Dağ Bisikleti Turu</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 18 Ekim 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video3/320/180" class="card-img-top" alt="Video 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Gece Gökyüzünde Yıldız Avı</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 27 Eylül 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 4 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video4/320/180" class="card-img-top" alt="Video 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Deniz Kenarında Sessiz Sabah</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 9 Kasım 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 5 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video5/320/180" class="card-img-top" alt="Video 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Kahveci Günlüğü: Latte Sanatı</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 1 Kasım 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 6 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video6/320/180" class="card-img-top" alt="Video 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Orman Yolunda Sessiz Yürüyüş</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 25 Ekim 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 7 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video7/320/180" class="card-img-top" alt="Video 7">
+                        <div class="card-body">
+                            <h5 class="card-title">Hızlı Çizim: Dijital Portre</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 7 Kasım 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 8 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video8/320/180" class="card-img-top" alt="Video 8">
+                        <div class="card-body">
+                            <h5 class="card-title">Sokak Müzisyenleri Konseri</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 16 Eylül 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 9 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video9/320/180" class="card-img-top" alt="Video 9">
+                        <div class="card-body">
+                            <h5 class="card-title">Yaratıcı Kahvaltı Tarifleri</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 30 Ekim 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 10 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video10/320/180" class="card-img-top" alt="Video 10">
+                        <div class="card-body">
+                            <h5 class="card-title">Bilim Seansı: Mini Roketler</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 12 Ağustos 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 11 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video11/320/180" class="card-img-top" alt="Video 11">
+                        <div class="card-body">
+                            <h5 class="card-title">Şehrin Gizli Kütüphaneleri</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 4 Kasım 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 12 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card video-card h-100 border-0 shadow-lg">
+                        <img src="https://picsum.photos/seed/video12/320/180" class="card-img-top" alt="Video 12">
+                        <div class="card-body">
+                            <h5 class="card-title">Drone ile Gün Batımı</h5>
+                            <p class="card-text text-muted small mb-0">Yüklenme: 2 Kasım 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-5 pt-4 text-muted">
+            <p class="mb-0">© 2025 Lab 12.11.2025 - Youtube tarzı kart düzeni çalışması</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

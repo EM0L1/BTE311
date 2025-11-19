@@ -1,0 +1,129 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    background-color: #4472c4;
+    /* Blue background from diagram */
+    width: 80%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* Top Section */
+.top-section {
+    margin-bottom: 50px;
+}
+
+.random-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.circle-frame {
+    width: 150px;
+    height: 150px;
+    background-color: #ffc000;
+    /* Yellow circle */
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #fff;
+}
+
+.circle-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    /* Hidden initially until loaded */
+}
+
+/* Bottom Section */
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.image-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.image-frame {
+    width: 250px;
+    height: 180px;
+    background-color: #ed7d31;
+    /* Orange rectangle */
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #fff;
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.action-btn {
+    background-color: #fff;
+    color: #333;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    width: 60px;
+}
+
+.show-btn {
+    background-color: #e2e2e2;
+}
+
+.hide-btn {
+    background-color: #e2e2e2;
+}

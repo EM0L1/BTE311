@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 19.11.2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Lab Görevi</h1>
+
+        <!-- Top Section: Random Image -->
+        <div class="top-section">
+            <div class="random-image-container">
+                <div class="circle-frame">
+                    <img id="randomImage" src="" alt="Rastgele Resim">
+                </div>
+                <button id="randomBtn" class="action-btn">Rastgele Resim Getir</button>
+            </div>
+        </div>
+
+        <!-- Bottom Section: 3 Images with Show/Hide -->
+        <div class="bottom-section">
+            <!-- Image 1 -->
+            <div class="image-card">
+                <div class="image-frame">
+                    <img id="img1" src="src/1.jpg" alt="Resim 1">
+                </div>
+                <div class="btn-group">
+                    <button onclick="showImage('img1')" class="control-btn show-btn">Göster</button>
+                    <button onclick="hideImage('img1')" class="control-btn hide-btn">Gizle</button>
+                </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="image-card">
+                <div class="image-frame">
+                    <img id="img2" src="src/2.jpg" alt="Resim 2">
+                </div>
+                <div class="btn-group">
+                    <button onclick="showImage('img2')" class="control-btn show-btn">Göster</button>
+                    <button onclick="hideImage('img2')" class="control-btn hide-btn">Gizle</button>
+                </div>
+            </div>
+
+            <!-- Image 3 -->
+            <div class="image-card">
+                <div class="image-frame">
+                    <img id="img3" src="src/3.jpg" alt="Resim 3">
+                </div>
+                <div class="btn-group">
+                    <button onclick="showImage('img3')" class="control-btn show-btn">Göster</button>
+                    <button onclick="hideImage('img3')" class="control-btn hide-btn">Gizle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

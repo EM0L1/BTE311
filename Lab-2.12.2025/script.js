@@ -222,3 +222,42 @@ function enterGame() {
   if (gameScreen) gameScreen.classList.remove("hidden");
   startGame();
 }
+
+// Oyundan ana menüye dön (global fonksiyon)
+function goToMenu() {
+  timeUp = true;
+
+  // Aktif interval ve timeout'ları temizle
+  if (shuffleIntervalId) {
+    clearInterval(shuffleIntervalId);
+    shuffleIntervalId = null;
+  }
+  if (timeBarIntervalId) {
+    clearInterval(timeBarIntervalId);
+    timeBarIntervalId = null;
+  }
+
+  // Köstebekleri gizle
+  holes.forEach((hole) => hole.classList.remove("up"));
+
+  // Sonuç penceresini kapat
+  if (resultOverlay) {
+    resultOverlay.classList.remove("active");
+  }
+
+  // Skoru ve butonu resetle
+  score = 0;
+  if (scoreBoard) scoreBoard.textContent = 0;
+  if (button) {
+    button.innerHTML = "Başlat";
+    button.style.visibility = "visible";
+  }
+
+  // Süre barını sıfırla
+  if (timeBarFill) {
+    timeBarFill.style.width = "100%";
+  }
+
+  if (gameScreen) gameScreen.classList.add("hidden");
+  if (menuScreen) menuScreen.classList.remove("hidden");
+}

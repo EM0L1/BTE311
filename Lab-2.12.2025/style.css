@@ -285,3 +285,21 @@ h2 {
 #start:hover {
   opacity: 0.8;
 }
+
+.back-menu-btn {
+  font-family: "Poppins", sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  border: 0;
+  background: #1f2933;
+  color: #e5e7eb;
+  font-size: 1.6rem;
+  padding: 0.8rem 1.8rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  border-radius: 0.8rem;
+}
+
+.back-menu-btn:hover {
+  opacity: 0.9;
+}

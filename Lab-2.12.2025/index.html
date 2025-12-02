@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emincan - Köstebeği Yakala Oyunu</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- 👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻-->
+    <!-- Also uploaded the demo of this code in a gif : https://c.tenor.com/x8v1oNUOmg4AAAAd/tenor.gif-->
+    <!-- 👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻-->
+
+    <!-- 👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻-->
+    <!-- More html-css-js Games Calculators Games Cards Elements Projects on https://www.github.com/he-is-talha -->
+    <!-- 👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻👆🏻-->
+  </head>
+  <body>
+    <div id="menuScreen" class="menu-screen">
+      <h1 class="menu-title">Emincan - Köstebeği Yakala</h1>
+      <p class="menu-subtitle">
+        Zorluğu, süreyi ve hızını seç; sonra köstebeği yakalamaya başla!
+      </p>
+
+      <div class="controls">
+        <div class="control-group">
+          <label for="difficulty">Zorluk:</label>
+          <select id="difficulty">
+            <option value="easy">Kolay</option>
+            <option value="normal" selected>Orta</option>
+            <option value="hard">Zor</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="durationRange">Süre: <span id="durationValue">10</span> sn</label>
+          <input
+            type="range"
+            id="durationRange"
+            min="5"
+            max="30"
+            step="1"
+            value="10"
+          />
+        </div>
+        <div class="control-group">
+          <label for="shuffleRange"
+            >Delik karıştırma hızı:
+            <span id="shuffleValue">1.5</span> sn</label
+          >
+          <input
+            type="range"
+            id="shuffleRange"
+            min="0.5"
+            max="3"
+            step="0.1"
+            value="1.5"
+          />
+        </div>
+      </div>
+
+      <button id="menuStart" class="menu-start-btn" onclick="enterGame()">
+        Oyuna Başla
+      </button>
+    </div>
+
+    <div id="gameScreen" class="game-screen hidden">
+      <div class="time-bar-wrapper">
+        <span class="time-label">Süre</span>
+        <div class="time-bar">
+          <div class="time-bar-fill" id="timeBarFill"></div>
+        </div>
+      </div>
+
+      <h1>Köstebeği Yakala!</h1>
+      <h2>Puan: <span class="score">0</span></h2>
+      <button id="start" onClick="startGame()">Başlat</button>
+      <div class="game">
+        <div class="hole hole1">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole2">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole3">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole4">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole5">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole6">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole7">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole8">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole9">
+          <div class="mole"></div>
+        </div>
+      </div>
+
+      <div class="result-overlay" id="resultOverlay">
+        <div class="result-card">
+          <h2>Oyun Bitti</h2>
+          <p>Toplam puanın: <span id="finalScore">0</span></p>
+          <div class="result-actions">
+            <button id="restartGame">Tekrar Oyna</button>
+            <button id="closeResult">Kapat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

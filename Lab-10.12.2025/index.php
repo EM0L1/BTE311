@@ -133,6 +133,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         <?php endif; ?>
     </div>
+
+    <div class="card" style="margin-top: 16px;">
+        <h1>1-100 Sayıları</h1>
+        <table style="width:100%; border-collapse: collapse; text-align:center; font-size:14px;">
+            <tbody>
+                <?php for ($i = 1; $i <= 100; $i++): ?>
+                    <?php if ($i % 10 === 1): ?><tr><?php endif; ?>
+                        <td style="border:1px solid #e0e0e0; padding:6px;"><?php echo $i; ?></td>
+                    <?php if ($i % 10 === 0): ?></tr><?php endif; ?>
+                <?php endfor; ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
 

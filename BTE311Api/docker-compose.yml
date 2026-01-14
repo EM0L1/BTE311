@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  coin-tracker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_COINGECKO_API_KEY: ${VITE_COINGECKO_API_KEY:-CG-vswhaUMrwb3BaQLbXMQx2jpB}
+    ports:
+      - "2230:80"
+    container_name: bte311-coin-tracker
+    restart: unless-stopped
+
+  # Development servisi - npm install ve npm run dev için
+  coin-tracker-dev:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    container_name: bte311-coin-tracker-dev
+    environment:
+      - VITE_COINGECKO_API_KEY=${VITE_COINGECKO_API_KEY:-CG-vswhaUMrwb3BaQLbXMQx2jpB}
+    command: sh -c "npm install && npm run dev"
+    profiles:
+      - dev

@@ -1,0 +1,266 @@
+.coin-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+/* Fiyat yükseldiğinde yeşil flash animasyonu */
+.coin-card.flash-up {
+  animation: flashGreen 2s ease-out;
+}
+
+/* Fiyat düştüğünde kırmızı flash animasyonu */
+.coin-card.flash-down {
+  animation: flashRed 2s ease-out;
+}
+
+@keyframes flashGreen {
+  0% {
+    background-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    background-color: rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes flashRed {
+  0% {
+    background-color: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 4px 6px rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    background-color: rgba(239, 68, 68, 0.2);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.coin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.coin-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.coin-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.coin-title h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.coin-symbol {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.coin-price {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.ohlc-grid {
+  display: grid;
+  /* 2x2: Açılış/Yüksek üst satır, Düşük/Hacim alt satır */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 14px 0;
+}
+
+.ohlc-item {
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  padding: 10px 8px;
+  text-align: center;
+  min-width: 0;
+}
+
+.ohlc-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.ohlc-value {
+  display: block;
+  font-size: clamp(0.92rem, 1vw, 1.05rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.price-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.coin-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.stat-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.stat-value.positive {
+  color: #10b981;
+}
+
+.stat-value.negative {
+  color: #ef4444;
+}
+
+/* Tablet ve mobil optimizasyonları */
+@media (max-width: 768px) {
+  .coin-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  
+  .coin-header {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .coin-image {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .coin-title h3 {
+    font-size: 0.95rem;
+    margin: 0 0 2px 0;
+  }
+  
+  .coin-symbol {
+    font-size: 0.75rem;
+  }
+  
+  .coin-price {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .price-label {
+    font-size: 0.75rem;
+    margin-bottom: 3px;
+  }
+  
+  .price-value {
+    font-size: 1.2rem;
+  }
+  
+  .coin-stats {
+    gap: 8px;
+  }
+
+  .ohlc-grid {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .ohlc-item {
+    padding: 9px 8px;
+    border-radius: 10px;
+  }
+  
+  .ohlc-label {
+    font-size: 0.72rem;
+  }
+  
+  .ohlc-value {
+    font-size: 0.98rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .stat-value {
+    font-size: 0.85rem;
+  }
+}
+
+/* Küçük mobil cihazlar için ekstra optimizasyon */
+@media (max-width: 480px) {
+  .coin-card {
+    padding: 10px;
+  }
+  
+  .coin-image {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .coin-title h3 {
+    font-size: 0.85rem;
+  }
+  
+  .price-value {
+    font-size: 1.1rem;
+  }
+
+  .ohlc-grid {
+    gap: 7px;
+  }
+
+  .ohlc-value {
+    font-size: 0.95rem;
+  }
+}
+

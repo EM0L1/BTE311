@@ -167,7 +167,3 @@ Sunucuya deploy etmek için:
 2. `docker-compose up -d` komutu ile çalıştırın.
 3. Nginx reverse proxy ile domain bağlayabilirsiniz.
 
-## Lisans
-
-Bu proje eğitim amaçlıdır.
-
